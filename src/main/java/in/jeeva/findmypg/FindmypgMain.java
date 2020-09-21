@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class findmypg {
+public class FindmypgMain {
 
 	public static void main(String[] args) {
-		SpringApplication.run(findmypg.class, args);
+		SpringApplication.run(FindmypgMain.class, args);
 	}
 
 }
