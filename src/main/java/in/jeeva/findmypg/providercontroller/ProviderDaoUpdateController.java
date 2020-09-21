@@ -65,11 +65,11 @@ public class ProviderDaoUpdateController {
         daoUpdateService.deletePG(id);
     }
     @GetMapping("/details")
-    public ResponseEntity<?>  getProviderDetails() {
+    public ResponseEntity<?>  getProviderDetails() throws Exception {
         return ResponseEntity.ok(daoUpdateService.getProviderDetails());
     }
     @GetMapping("/profile")
-    public ResponseEntity<?> getProfile() {
+    public ResponseEntity<?> getProfile() throws Exception {
         return ResponseEntity.ok(daoUpdateService.getProfile());
     }
 }

@@ -80,7 +80,7 @@ public class ProviderDaoUpdateService {
             }
             return null;
         }).collect(Collectors.toList());
-        PGinfo pGinfo = pginfoRepo.findById(id).orElseThrow();
+        PGinfo pGinfo = pginfoRepo.findById(id).orElseThrow(() -> new Exception("Not Found"));
         pGinfo.setPgImages(pgImages);
         return pginfoRepo.save(pGinfo).getPgImages();
     }
@@ -105,13 +105,13 @@ public class ProviderDaoUpdateService {
     public void deletePG(Long id) {
         pginfoRepo.deleteById(id);
     }
-    public ProviderDetails getProviderDetails() {
-        return providerDetailsRepo.findByUsername(extractUsername()).orElseThrow();
+    public ProviderDetails getProviderDetails() throws Exception {
+        return providerDetailsRepo.findByUsername(extractUsername()).orElseThrow(() -> new Exception("User Not Found"));
     }
-    public ProviderProfile getProfile() {
+    public ProviderProfile getProfile() throws Exception {
         ProviderProfile profile = providerDetailsRepo
                                     .findByUsername(extractUsername())
-                                    .orElseThrow()
+                                    .orElseThrow(() -> new Exception("User Not Found"))
                                     .getProviderProfile();
         return profile;
     }
