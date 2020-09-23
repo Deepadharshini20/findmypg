@@ -67,7 +67,7 @@ public class WebSecurityConfigurer extends WebSecurityConfigurerAdapter {
 	}
 	
 	public void addCorsMappings(CorsRegistry registry) {
-		registry.addMapping("/**").allowedOrigins("https://findmypg-reactjs-app.herokuapp.com/")
+		registry.addMapping("/**").allowedOrigins("*")
 		.allowedMethods("HEAD", "GET", "PUT", "POST",
 		"DELETE", "PATCH").allowedHeaders("*");	
 	}
