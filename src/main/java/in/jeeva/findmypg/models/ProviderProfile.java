@@ -28,4 +28,5 @@ public class ProviderProfile {
     @Lob
     @Column(columnDefinition="LONGBLOB")
     private byte[] profile;
+    
 }

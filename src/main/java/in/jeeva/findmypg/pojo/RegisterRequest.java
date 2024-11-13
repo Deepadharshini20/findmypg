@@ -2,18 +2,31 @@ package in.jeeva.findmypg.pojo;
 
 import in.jeeva.findmypg.models.ProviderDetails;
 import in.jeeva.findmypg.models.ProviderLogin;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-@Getter
-@Setter
 public class RegisterRequest {
     private ProviderLogin providerLogin;
     private ProviderDetails providerDetails;
+
+    public RegisterRequest(ProviderDetails providerDetails, ProviderLogin providerLogin) {
+        this.providerDetails = providerDetails;
+        this.providerLogin = providerLogin;
+    }
+
+    public ProviderLogin getProviderLogin() {
+        return providerLogin;
+    }
+
+    public void setProviderLogin(ProviderLogin providerLogin) {
+        this.providerLogin = providerLogin;
+    }
+
+    public ProviderDetails getProviderDetails() {
+        return providerDetails;
+    }
+
+    public void setProviderDetails(ProviderDetails providerDetails) {
+        this.providerDetails = providerDetails;
+    }
+
+
 }
