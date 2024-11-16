@@ -7,7 +7,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,7 +14,6 @@ import lombok.Setter;
 
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
 @Getter
 @Setter
 @Entity
@@ -28,4 +26,13 @@ public class PGImages {
     @Lob
     @Column(columnDefinition = "longblob")
     private byte[] profile;
+
+    public PGImages(Long id, String filename, String filetype, byte[] profile) {
+        this.id = id;
+        this.filename = filename;
+        this.filetype = filetype;
+        this.profile = profile;
+    }
+    
+    
 }

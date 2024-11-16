@@ -14,7 +14,6 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-import org.springframework.web.servlet.config.annotation.CorsRegistry;
 
 import in.jeeva.findmypg.execption.JwtAuthenticationEntryPoint;
 import in.jeeva.findmypg.filter.JwtRequestFilter;
@@ -64,11 +63,5 @@ public class WebSecurityConfigurer extends WebSecurityConfigurerAdapter {
 					.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
 		httpSecurity.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
-	}
-	
-	public void addCorsMappings(CorsRegistry registry) {
-		registry.addMapping("/**").allowedOrigins("*")
-		.allowedMethods("HEAD", "GET", "PUT", "POST",
-		"DELETE", "PATCH").allowedHeaders("*");	
 	}
 }

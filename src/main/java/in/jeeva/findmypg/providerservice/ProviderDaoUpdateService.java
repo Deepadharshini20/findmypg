@@ -54,7 +54,7 @@ public class ProviderDaoUpdateService {
         if (filename.contains("..")) {
             throw new Exception("Invalid Profile");
         }
-        ProviderProfile providerProfile = new ProviderProfile(null, filename, file.getContentType(), file.getBytes());
+        ProviderProfile providerProfile = new ProviderProfile(filename, file.getContentType(), file.getBytes(), null);
         return providerProfile;
     }
     private String extractUsername() {

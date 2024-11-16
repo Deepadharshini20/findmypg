@@ -7,15 +7,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
 @Getter
 @Setter
 @Entity
@@ -28,5 +24,17 @@ public class ProviderProfile {
     @Lob
     @Column(columnDefinition="LONGBLOB")
     private byte[] profile;
+
+    public ProviderProfile(String filename, String filetype, byte[] profile, Long id) {
+        this.filename = filename;
+        this.filetype = filetype;
+        this.id = id;
+        this.profile = profile;
+    }
+
+    public ProviderProfile() {
+    }
+
+
     
 }

@@ -38,4 +38,22 @@ public class PGinfo {
     @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     @JoinColumn(name = "pg_fk")
     private List<PGImages> pgImages;
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public void setPgImages(List<PGImages> pgImages) {
+        this.pgImages = pgImages;
+    }
+
+    public List<PGImages> getPgImages() {
+        return pgImages;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+
 }
